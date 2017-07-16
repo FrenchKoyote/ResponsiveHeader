@@ -1,0 +1,73 @@
+<md-toolbar color="secondary" fxShow="false" fxShow.gt-md>
+  <md-icon>account_circle</md-icon>
+</md-toolbar>
+<md-toolbar color="primary">
+    <button md-button routerLink="/">
+    <md-icon>home</md-icon> 
+        {{title}}
+    </button>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="fill-remaining-space"></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-md>
+      <button md-button>Accueil</button>
+      <button md-button [mdMenuTriggerFor]="menu2">Actualités<md-icon>arrow_drop_down</md-icon></button>
+      <md-menu #menu2="mdMenu">
+        <button md-menu-item>Actualités de l'immobilier</button>
+        <button md-menu-item>Guides immobiliers</button>
+      </md-menu>
+      <button md-button [mdMenuTriggerFor]="menu3">Comment ça marche<md-icon>arrow_drop_down</md-icon></button>
+      <md-menu #menu3="mdMenu">
+        <button md-menu-item>Publier une annonce immobilière</button>
+        <button md-menu-item>Rechercher un bien immobilier</button>
+      </md-menu>
+      <button md-button>Recherche</button>
+      <button md-button [mdMenuTriggerFor]="menu5">Nos offres<md-icon>arrow_drop_down</md-icon></button>
+      <md-menu #menu5="mdMenu">
+        <button md-menu-item>Comparer nos offres</button>
+        <button md-menu-item>Offre standard</button>
+        <button md-menu-item>Offre premium</button>
+        <button md-menu-item>Option de publication</button>
+      </md-menu>
+      <button md-button>Ajouter une annonce</button>
+      <button md-button>Trouver une agence</button>
+      <button md-button>Contact</button>
+    </div>
+    <button md-button (click)="sidenav.open()" fxHide="false" fxHide.gt-md>
+        <md-icon>menu</md-icon>
+      </button>
+</md-toolbar>
+<md-sidenav-container fxHide="false" fxHide.gt-md>
+  <md-sidenav align="end" #sidenav class="sidenav" fxHide="false" fxHide.gt-md>
+    <md-nav-list>
+      
+<a md-list-item (click)="sidenav.close()">
+        
+<md-icon md-list-icon>Home</md-icon>
+        
+<span md-line>Home</span>
+        
+<span md-line class="secondary">Home</span>
+      
+</a>
+      
+<a md-list-item (click)="sidenav.close()">
+        <md-icon md-list-icon>list</md-icon>
+        <span md-line>Categories</span>
+        <span md-line class="secondary">Categories</span>
+      </a>
+      <a md-list-item (click)="sidenav.close()">
+        <md-icon md-list-icon>bookmark</md-icon>
+        <span md-line>Tags</span>
+        <span md-line class="secondary">Tags</span>
+      </a>
+      <a md-list-item (click)="sidenav.close()">
+        <md-icon md-list-icon>question_answer</md-icon>
+        <span md-line>Questions</span>
+        <span md-line class="secondary">Questions</span>
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+</md-sidenav-container>
+
+
